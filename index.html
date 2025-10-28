@@ -6,7 +6,7 @@
   <title>Messina Linux User Group</title>
   <style>
     body {
-      background: #0f172a;
+      background: #1a1625;
       color: #e2e8f0;
       font-family: "Fira Code", monospace;
       text-align: center;
@@ -15,46 +15,59 @@
       flex-direction: column;
       justify-content: center;
       height: 100vh;
+      overflow: hidden;
     }
 
     h1 {
-      font-size: 2.5rem;
-      color: #38bdf8;
+      font-size: 2.6rem;
+      color: #c084fc;
     }
 
     p {
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       margin: 1rem auto;
-      max-width: 600px;
+      max-width: 650px;
+      line-height: 1.6;
     }
 
     .terminal {
-      background: #1e293b;
-      color: #a5f3fc;
+      background: #2d1b46;
+      color: #c4b5fd;
       border-radius: 10px;
-      padding: 1rem;
+      padding: 1rem 1.5rem;
       margin: 2rem auto;
       width: fit-content;
-      box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+      box-shadow: 0 0 20px rgba(192, 132, 252, 0.25);
+      font-size: 1rem;
+      overflow: hidden;
+      white-space: nowrap;
+      border-left: 4px solid #a855f7;
     }
 
-    .cursor {
+    /* Effetto macchina da scrivere */
+    .typewriter {
       display: inline-block;
-      width: 10px;
-      background: #38bdf8;
-      animation: blink 1s infinite;
+      overflow: hidden;
+      border-right: .15em solid #a855f7;
+      white-space: nowrap;
+      animation:
+        typing 6s steps(70, end),
+        blink-caret 0.75s step-end infinite;
     }
 
-    @keyframes blink {
-      50% {
-        opacity: 0;
-      }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink-caret {
+      50% { border-color: transparent }
     }
 
     a {
-      color: #38bdf8;
+      color: #a855f7;
       text-decoration: none;
-      border-bottom: 1px dotted #38bdf8;
+      border-bottom: 1px dotted #a855f7;
     }
 
     a:hover {
@@ -65,25 +78,55 @@
     footer {
       margin-top: 3rem;
       font-size: 0.9rem;
-      color: #94a3b8;
+      color: #a3a3a3;
+    }
+
+    /* Tux pixelato animato */
+    .tux {
+      position: absolute;
+      bottom: 15px;
+      left: -100px;
+      width: 64px;
+      image-rendering: pixelated;
+      animation: walk 14s linear infinite;
+    }
+
+    @keyframes walk {
+      0% { left: -100px; transform: scaleX(1); }
+      49% { left: calc(100% + 100px); transform: scaleX(1); }
+      50% { left: calc(100% + 100px); transform: scaleX(-1); }
+      99% { left: -100px; transform: scaleX(-1); }
+      100% { left: -100px; transform: scaleX(1); }
     }
   </style>
 </head>
 <body>
   <h1>Messina Linux User Group 🐧</h1>
+
   <div class="terminal">
-    <p>$ sudo apt install caffe --break && echo "Work in progress..."<span class="cursor"></span></p>
+    <div class="typewriter">
+      $ sudo emerge --sync && emerge free-software && echo "Recompiling minds with USE='-Accademia +HACKdemia'"
+    </div>
   </div>
+
   <p>
-    Benvenuto nel cuore open source dello Stretto!  
-    Stiamo preparando qualcosa di bello — e naturalmente, libero.
+    Benvenuto nel cuore libero dello Stretto.<br>
+    Crediamo nel <strong>software libero</strong> come forma di crescita, studio e autodeterminazione.<br>
+    Non si tratta solo di compilare codice, ma di <em>ricompilare noi stessi</em>.
   </p>
+
   <p>
+    Stiamo preparando qualcosa di bello — e naturalmente, libero.<br>
     Seguici su <a href="#">Telegram</a> o <a href="#">GitHub</a> per restare aggiornato!
   </p>
+
   <footer>
-    <p>Powered by Linux, espresso e buona volontà ☕</p>
+    <p>“Free as in freedom, not as in free beer.” — Richard M. Stallman</p>
+    <p>Powered by Gentoo, GNU/Linux e buona volontà ☕</p>
   </footer>
+
+  <!-- Tux pixel art -->
+  <img class="tux" alt="Tux in pixel art che cammina"
+       src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Tux_flat_pixel.png">
 </body>
 </html>
-
