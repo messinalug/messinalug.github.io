@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Messina Linux User Group</title>
+  <style>
+    body {
+      background: #0f172a;
+      color: #e2e8f0;
+      font-family: "Fira Code", monospace;
+      text-align: center;
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #38bdf8;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin: 1rem auto;
+      max-width: 600px;
+    }
+
+    .terminal {
+      background: #1e293b;
+      color: #a5f3fc;
+      border-radius: 10px;
+      padding: 1rem;
+      margin: 2rem auto;
+      width: fit-content;
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      background: #38bdf8;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    a {
+      color: #38bdf8;
+      text-decoration: none;
+      border-bottom: 1px dotted #38bdf8;
+    }
+
+    a:hover {
+      color: #facc15;
+      border-bottom-color: #facc15;
+    }
+
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+  <h1>Messina Linux User Group 🐧</h1>
+  <div class="terminal">
+    <p>$ sudo apt install caffe --break && echo "Work in progress..."<span class="cursor"></span></p>
+  </div>
+  <p>
+    Benvenuto nel cuore open source dello Stretto!  
+    Stiamo preparando qualcosa di bello — e naturalmente, libero.
+  </p>
+  <p>
+    Seguici su <a href="#">Telegram</a> o <a href="#">GitHub</a> per restare aggiornato!
+  </p>
+  <footer>
+    <p>Powered by Linux, espresso e buona volontà ☕</p>
+  </footer>
+</body>
+</html>
+
