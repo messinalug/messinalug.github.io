@@ -14,13 +14,15 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      height: 100vh;
-      overflow: hidden;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
     }
 
     h1 {
       font-size: 2.6rem;
       color: #c084fc;
+      margin-bottom: 1rem;
     }
 
     p {
@@ -34,34 +36,19 @@
       background: #2d1b46;
       color: #c4b5fd;
       border-radius: 10px;
-      padding: 1rem 1.5rem;
+      padding: 0.5rem 0.5rem;
       margin: 2rem auto;
-      width: fit-content;
+      width: min(90vw, 1000px);  /* responsive */
+      min-height: 4rem;         /* altezza minima */
       box-shadow: 0 0 20px rgba(192, 132, 252, 0.25);
       font-size: 1rem;
-      overflow: hidden;
-      white-space: nowrap;
+      overflow-wrap: anywhere;
+      white-space: pre-wrap;    /* va a capo se necessario */
       border-left: 4px solid #a855f7;
-    }
-
-    /* Effetto macchina da scrivere */
-    .typewriter {
-      display: inline-block;
-      overflow: hidden;
-      border-right: .15em solid #a855f7;
-      white-space: nowrap;
-      animation:
-        typing 6s steps(70, end),
-        blink-caret 0.75s step-end infinite;
-    }
-
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-
-    @keyframes blink-caret {
-      50% { border-color: transparent }
+      display: flex;
+      justify-content: left;
+      align-items: center;      /* centra verticalmente il contenuto */
+      text-align: left;
     }
 
     a {
@@ -79,6 +66,17 @@
       margin-top: 3rem;
       font-size: 0.5rem;
       color: #a3a3a3;
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    footer img {
+      max-width: 120px;
+      height: auto;
+      display: block;
     }
 
     /* Tux pixelato animato */
@@ -98,36 +96,41 @@
       99% { left: -100px; transform: scaleX(-1); }
       100% { left: -100px; transform: scaleX(1); }
     }
+
+    @media (max-width: 420px) {
+      body { padding: 1rem; }
+      .terminal { padding: 0.7rem 0.8rem; }
+      footer img { max-width: 90px; }
+    }
   </style>
 </head>
 <body>
   <h1>Messina Linux User Group 🐧</h1>
 
   <div class="terminal">
-    <div class="typewriter">
     $ sudo emerge --verbose free-software && rm -rf proprietary/ && export USE="-Accademia +HACKdemia"
-    </div>
   </div>
 
   <p>
     <em>Siamo una comunità di liberi e curiosi</em><br><br>
-
     Crediamo che la conoscenza non debba appartenere a pochi, ma a tutti.<br>
     <b>Siamo da sempre liberi da legami istituzionali e rifiutiamo la logica proprietaria che trasforma il sapere in privilegio.</b><br>
     Il nostro strumento è il codice, la nostra etica è l'indipendenza, la nostra forza è la collaborazione.<br>
-    Scriviamo, smontiamo, modifichiamo, condividiamo: per capire e costruire.<br>
+    Scriviamo, smontiamo, modifichiamo, condividiamo, per capire e costruire.<br>
   </p>
 
   <p>
     Stiamo preparando qualcosa di bello — e naturalmente, libero.<br>
-    Seguici su <a href="ircs://irc.libera.chat/#melug">IRC (SSL)</a>, <a href="https://t.me/messinalug">Telegram</a> e <a href="https://github.com/messinalug/">GitHub</a> per restare aggiornato!
+    Seguici su <a href="ircs://irc.libera.chat/#melug">IRC (SSL)</a>,
+    <a href="https://t.me/messinalug" target="_blank" rel="noopener">Telegram</a>
+    e <a href="https://github.com/messinalug/" target="_blank" rel="noopener">GitHub</a> per restare aggiornato!
   </p>
 
   <footer>
-    <img src="logo_phpBB.gif">
-    <p>Since 2002, with Love</p>
+    <img src="logo_phpBB.gif" alt="logo community (placeholder)">
+    <div>Messina F/OS Community, Since 2002, with Love</div>
   </footer>
 
-  
+
 </body>
 </html>
